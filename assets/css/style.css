@@ -23,7 +23,7 @@ body {
     color: #d9dcd6;
 }
 
-/* changed DIV element selector to NAV */
+/*HEADER/NAV start*/
 .header nav {
     padding-top: 15px;
     margin-right: 20px;
@@ -38,7 +38,7 @@ body {
     display: inline-block;
     margin-left: 25px;
 }
-/* DIV to NAV end */
+/* Header */
 
 a {
     color: #ffffff;
