@@ -17,11 +17,11 @@ In order to both consolidate the description of my work and highlight what I fou
 
 **The final refactored site can be found here:** https://zdensamson.github.io/Code-Refactor-Horiseon/
 
-## Implementing semantic HTML elements
+### Implementing semantic HTML elements
 
 The existing site "functioned" properly with non-semantic elements, but the following exapmles demonstrate the edits I provided for both **accessibility** & **SEO**.
 
-### Header edits
+#### Header edits
 **Before the refactor**-- the starting index.HTML did not have a semantically titled header nor any idication that the nested `<a>` tags contained navigation links referencing content within the page.
 
     <div class="header">
@@ -48,7 +48,7 @@ The existing site "functioned" properly with non-semantic elements, but the foll
         </nav>
     </header>
 
-### Main body edits
+#### Main body edits
 **Before the refactor** the "content/services" section implemented a parent `<div>` that contained three related nested `<div>`'s. The three child `<div>`'s were all services that _Horiseon_ offered and their relation to one another called for their parent to be changed to a `<section>` tag. The three child `<div>`'s each contained a unique header, image, and descriprtion that related to one another making each a standalone element-- for this reason I changed the three child `<div>`'s to `<article>`'s.
 
     <div class="content">
@@ -95,11 +95,13 @@ The existing site "functioned" properly with non-semantic elements, but the foll
         </article>
     </section>
     
-## Consolidating the CSS stylesheet
+### Consolidating the CSS stylesheet
 
 After reviewing both the CSS rule set-- and the respective HTML elements they styled-- it became clear that the original CSS code was implementing the exact same style to multiple elements utilizing uneccessary unique class selectors that could all be consolidated into a single class. 
 
-For instance-- when styling the benefit section's 
+For instance when styling the benefit section's `<div>` & `<h3>` elements-- the initial CSS created 6 unique style rules (with 3 unique class selectors) that can condensed into 2 seperate rules (with a single class selector). The first code snippet shows the initial CSS style, and the second code snippet shows where I replaced the `.benefit-lead`, `.benefit-brand`, & `.benefit-cost` classes with a single __`.benefit-description`__ class.
+
+__Before code refactor__
 
     .benefit-lead {
     margin-bottom: 32px;
@@ -130,3 +132,35 @@ For instance-- when styling the benefit section's
         margin-bottom: 10px;
         text-align: center;
     }
+    
+__After code refactor__
+
+    .benefit-description {
+        margin-bottom: 32px;
+        color: #ffffff;
+    }
+    .benefit-description h3 {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+## License 
+
+Copyright (c) 2021 Zachary Dennis Samson
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
