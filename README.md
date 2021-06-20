@@ -8,10 +8,10 @@ My task as the front-end developer was to update the existing code base to follo
 
 In order to accomplish this goal (and impress the _client_) I implemented the following steps: 
 1. Reviewed the index.HTML file in both VScode & Chrome Dev Tools to ensure all links functioned properly
-2. Replaced non-semantic elements with semantic elements in HTML
+2. **Replaced non-semantic elements with semantic elements in HTML**
 3. Provided every `<img>` tag with an `alt` attribute 
 4. Provided a concise & descriptive `title` to the `<head>` tag
-5. Consolidated the CSS rules to make the stylesheet more efficient 
+5. **Consolidated the CSS rules to make the stylesheet more efficient** 
 
 In order to both consolidate the description of my work and highlight what I found to be "most important"-- I will only be providing exapmples from steps __#2__ & __#5__.
 
@@ -95,4 +95,38 @@ The existing site "functioned" properly with non-semantic elements, but the foll
         </article>
     </section>
     
-## Consolidating CSS stylesheet
+## Consolidating the CSS stylesheet
+
+After reviewing both the CSS rule set-- and the respective HTML elements they styled-- it became clear that the original CSS code was implementing the exact same style to multiple elements utilizing uneccessary unique class selectors that could all be consolidated into a single class. 
+
+For instance-- when styling the benefit section's 
+
+    .benefit-lead {
+    margin-bottom: 32px;
+    color: #ffffff;
+    }
+
+    .benefit-brand {
+        margin-bottom: 32px;
+        color: #ffffff;
+    }
+
+    .benefit-cost {
+        margin-bottom: 32px;
+        color: #ffffff;
+    }
+
+    .benefit-lead h3 {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .benefit-brand h3 {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .benefit-cost h3 {
+        margin-bottom: 10px;
+        text-align: center;
+    }
