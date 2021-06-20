@@ -1,4 +1,4 @@
-# Horseoin code refactor
+# Horiseon code refactor
 
 ## Description 
 
